@@ -76,6 +76,10 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\InputOutput.cs" />
+    <Compile Include="Models\Problem.cs" />
+    <Compile Include="Models\Submission.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="ParticipantForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,7 +130,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
