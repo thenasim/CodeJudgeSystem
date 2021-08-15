@@ -11,9 +11,10 @@ namespace JudgeSystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new CodeRunResultForm());
-            Application.Run(new AdminForm());
+            //Application.Run(new AdminForm());
             //Application.Run(new JudgeForm());
             //Application.Run(new ParticipantForm());
+            Application.Run(new AddMoreIOForm());
         }
     }
 }
