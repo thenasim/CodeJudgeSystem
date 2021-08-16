@@ -37,7 +37,7 @@ namespace JudgeSystem
             this.label3 = new System.Windows.Forms.Label();
             this.txtUserEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUserPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbUserRole = new System.Windows.Forms.ComboBox();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -46,6 +46,7 @@ namespace JudgeSystem
             this.label7 = new System.Windows.Forms.Label();
             this.dgvSubmissionData = new System.Windows.Forms.DataGridView();
             this.btnDeleteUser = new System.Windows.Forms.Button();
+            this.btnUpdateUser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubmissionData)).BeginInit();
             this.SuspendLayout();
@@ -124,14 +125,14 @@ namespace JudgeSystem
             this.label4.TabIndex = 10;
             this.label4.Text = "Password";
             // 
-            // txtPassword
+            // txtUserPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(18, 386);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(368, 34);
-            this.txtPassword.TabIndex = 9;
-            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtUserPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserPassword.Location = new System.Drawing.Point(18, 386);
+            this.txtUserPassword.Name = "txtUserPassword";
+            this.txtUserPassword.Size = new System.Drawing.Size(368, 34);
+            this.txtUserPassword.TabIndex = 9;
+            this.txtUserPassword.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -164,6 +165,7 @@ namespace JudgeSystem
             this.btnSubmit.TabIndex = 14;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // label6
             // 
@@ -181,12 +183,16 @@ namespace JudgeSystem
             this.dgvUserData.AllowUserToDeleteRows = false;
             this.dgvUserData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUserData.Location = new System.Drawing.Point(466, 57);
+            this.dgvUserData.MultiSelect = false;
             this.dgvUserData.Name = "dgvUserData";
             this.dgvUserData.ReadOnly = true;
             this.dgvUserData.RowHeadersWidth = 51;
             this.dgvUserData.RowTemplate.Height = 24;
+            this.dgvUserData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUserData.Size = new System.Drawing.Size(880, 296);
             this.dgvUserData.TabIndex = 16;
+            this.dgvUserData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserData_CellClick);
+            this.dgvUserData.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserData_CellDoubleClick);
             // 
             // label7
             // 
@@ -215,18 +221,32 @@ namespace JudgeSystem
             // 
             this.btnDeleteUser.Enabled = false;
             this.btnDeleteUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteUser.Location = new System.Drawing.Point(18, 643);
+            this.btnDeleteUser.Location = new System.Drawing.Point(205, 643);
             this.btnDeleteUser.Name = "btnDeleteUser";
-            this.btnDeleteUser.Size = new System.Drawing.Size(368, 46);
+            this.btnDeleteUser.Size = new System.Drawing.Size(181, 46);
             this.btnDeleteUser.TabIndex = 19;
             this.btnDeleteUser.Text = "Delete";
             this.btnDeleteUser.UseVisualStyleBackColor = true;
+            this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
+            // 
+            // btnUpdateUser
+            // 
+            this.btnUpdateUser.Enabled = false;
+            this.btnUpdateUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateUser.Location = new System.Drawing.Point(18, 643);
+            this.btnUpdateUser.Name = "btnUpdateUser";
+            this.btnUpdateUser.Size = new System.Drawing.Size(181, 46);
+            this.btnUpdateUser.TabIndex = 20;
+            this.btnUpdateUser.Text = "Update";
+            this.btnUpdateUser.UseVisualStyleBackColor = true;
+            this.btnUpdateUser.Click += new System.EventHandler(this.btnUpdateUser_Click);
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1358, 731);
+            this.Controls.Add(this.btnUpdateUser);
             this.Controls.Add(this.btnDeleteUser);
             this.Controls.Add(this.dgvSubmissionData);
             this.Controls.Add(this.label7);
@@ -236,7 +256,7 @@ namespace JudgeSystem
             this.Controls.Add(this.cmbUserRole);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUserPassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtUserEmail);
             this.Controls.Add(this.label2);
@@ -246,6 +266,7 @@ namespace JudgeSystem
             this.Controls.Add(this.lblLoginId);
             this.Name = "AdminForm";
             this.Text = "AdminForm";
+            this.Load += new System.EventHandler(this.AdminForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubmissionData)).EndInit();
             this.ResumeLayout(false);
@@ -263,7 +284,7 @@ namespace JudgeSystem
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtUserEmail;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtUserPassword;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbUserRole;
         private System.Windows.Forms.Button btnSubmit;
@@ -272,5 +293,6 @@ namespace JudgeSystem
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvSubmissionData;
         private System.Windows.Forms.Button btnDeleteUser;
+        private System.Windows.Forms.Button btnUpdateUser;
     }
 }

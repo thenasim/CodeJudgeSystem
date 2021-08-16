@@ -49,6 +49,15 @@ namespace JudgeSystem.Data
             return null;
         }
 
+        public static bool CreateUser(User u)
+        {
+            string query = $@"INSERT INTO Users (name, address, email, password, [role])
+                VALUES ('{u.Name}', '{u.Address}', '{u.Email}', '{u.Password}', '{u.Role}');";
+            var row = DataAccess.UpdateDelete(query);
+
+            return row == 1;
+        }
+
         public static bool UpdateUser(User u)
         {
             string query = $@"UPDATE Users SET name = '{u.Name}',

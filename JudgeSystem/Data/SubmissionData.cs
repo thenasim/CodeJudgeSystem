@@ -27,6 +27,28 @@ namespace JudgeSystem.Data
             return null;
         }
 
+        public static List<Submission> GetRecentSubmissions()
+        {
+            List<Submission> submissions = new List<Submission>();
+
+            string query = $@"SELECT * FROM Submissions ORDER BY [time] DESC";
+            SqlDataReader reader = DataAccess.GetData(query);
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    submissions.Add(ConvertDataToSubmission(reader));
+                }
+
+                reader.Close();
+                return submissions;
+            }
+
+            reader.Close();
+            return null;
+        }
+
         public static List<Submission> GetSubmissionsByUserId(int id)
         {
             List<Submission> submissions = new List<Submission>();
