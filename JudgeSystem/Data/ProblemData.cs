@@ -48,7 +48,7 @@ namespace JudgeSystem.Data
             return null;
         }
 
-        public static List<Problem> GetUsers()
+        public static List<Problem> GetProblems()
         {
             List<Problem> problems = new List<Problem>();
 
