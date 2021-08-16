@@ -196,6 +196,7 @@ namespace JudgeSystem
             this.btnAddMoreIO.TabIndex = 8;
             this.btnAddMoreIO.Text = "AddMoreIO";
             this.btnAddMoreIO.UseVisualStyleBackColor = true;
+            this.btnAddMoreIO.Click += new System.EventHandler(this.btnAddMoreIO_Click);
             // 
             // JudgeForm
             // 

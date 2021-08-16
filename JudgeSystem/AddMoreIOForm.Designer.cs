@@ -52,9 +52,9 @@ namespace JudgeSystem
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(8, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 24);
+            this.label5.Size = new System.Drawing.Size(134, 24);
             this.label5.TabIndex = 21;
-            this.label5.Text = "Input";
+            this.label5.Text = "Input (optional)";
             // 
             // rtxtOutput
             // 
@@ -85,6 +85,7 @@ namespace JudgeSystem
             this.btnAdd.TabIndex = 24;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // AddMoreIOForm
             // 

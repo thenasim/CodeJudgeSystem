@@ -1,13 +1,6 @@
 ﻿using JudgeSystem.Data;
 using JudgeSystem.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace JudgeSystem
@@ -64,7 +57,24 @@ namespace JudgeSystem
 
             InputOutputData.CreateInputOutput(io);
 
+            foreach (InputOutput moreIo in TempData.inputOutputs)
+            {
+                moreIo.ProblemId = createdId;
+                InputOutputData.CreateInputOutput(moreIo);
+            }
+
             MessageBox.Show("Problem Created Successfully");
+            ClearInputFields();
+        }
+
+        private void btnAddMoreIO_Click(object sender, EventArgs e)
+        {
+            if (ManageForm.AddMoreIOForm == null)
+            {
+                ManageForm.AddMoreIOForm = new AddMoreIOForm();
+            }
+
+            ManageForm.AddMoreIOForm.Show();
         }
 
         private void JudgeForm_FormClosed(object sender, FormClosedEventArgs e)

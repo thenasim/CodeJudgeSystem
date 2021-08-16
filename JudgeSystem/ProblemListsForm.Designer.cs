@@ -49,6 +49,8 @@ namespace JudgeSystem
             // 
             this.dgvProblemLists.AllowUserToAddRows = false;
             this.dgvProblemLists.AllowUserToDeleteRows = false;
+            this.dgvProblemLists.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProblemLists.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProblemLists.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProblemLists.Location = new System.Drawing.Point(18, 86);
             this.dgvProblemLists.Name = "dgvProblemLists";
