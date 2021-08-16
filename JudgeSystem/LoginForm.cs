@@ -1,13 +1,6 @@
 ﻿using JudgeSystem.Data;
 using JudgeSystem.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace JudgeSystem
@@ -26,9 +19,29 @@ namespace JudgeSystem
             if (user == null)
             {
                 MessageBox.Show("Email or Password does not match");
-            } else
+            }
+            else
             {
-                MessageBox.Show($"Id: {user.Id}, Name: {user.Name}, Address: {user.Address}");
+                ManageUser.CurrentUser = user;
+
+                if (ManageUser.IsAdmin(user))
+                {
+                    ManageForm.AdminForm = new AdminForm();
+                    ManageForm.AdminForm.Show();
+                    this.Hide();
+                }
+                else if (ManageUser.IsJudge(user))
+                {
+                    ManageForm.JudgeForm = new JudgeForm();
+                    ManageForm.JudgeForm.Show();
+                    this.Hide();
+                }
+                else if (ManageUser.IsParticpant(user))
+                {
+                    ManageForm.ProblemListsForm = new ProblemListsForm();
+                    ManageForm.ProblemListsForm.Show();
+                    this.Hide();
+                }
             }
         }
     }

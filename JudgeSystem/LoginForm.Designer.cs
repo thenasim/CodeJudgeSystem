@@ -51,9 +51,9 @@ namespace JudgeSystem
             this.lblLoginId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoginId.Location = new System.Drawing.Point(8, 212);
             this.lblLoginId.Name = "lblLoginId";
-            this.lblLoginId.Size = new System.Drawing.Size(77, 24);
+            this.lblLoginId.Size = new System.Drawing.Size(57, 24);
             this.lblLoginId.TabIndex = 1;
-            this.lblLoginId.Text = "Login Id";
+            this.lblLoginId.Text = "Email";
             // 
             // lblLoginPassword
             // 

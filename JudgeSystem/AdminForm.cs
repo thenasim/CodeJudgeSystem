@@ -49,7 +49,7 @@ namespace JudgeSystem
             txtUserAddress.Text = "";
             txtUserEmail.Text = "";
             txtUserPassword.Text = "";
-            cmbUserRole.Text = "";
+            cmbUserRole.SelectedIndex = -1;
         }
 
         private void AdminForm_Load(object sender, EventArgs e)
@@ -113,6 +113,11 @@ namespace JudgeSystem
         private void dgvUserData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnDeleteUser.Enabled = true;
+
+            if (ManageUser.CurrentUser != null)
+            {
+                MessageBox.Show(ManageUser.CurrentUser.Name);
+            }
         }
 
         private void dgvUserData_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -126,6 +131,11 @@ namespace JudgeSystem
             txtUserEmail.Text = u.Email;
             txtUserPassword.Text = u.Password;
             cmbUserRole.Text = u.Role;
+        }
+
+        private void AdminForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

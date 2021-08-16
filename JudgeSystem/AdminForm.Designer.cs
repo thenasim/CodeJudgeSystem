@@ -40,7 +40,7 @@ namespace JudgeSystem
             this.txtUserPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbUserRole = new System.Windows.Forms.ComboBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvUserData = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
@@ -146,26 +146,27 @@ namespace JudgeSystem
             // 
             // cmbUserRole
             // 
+            this.cmbUserRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUserRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbUserRole.FormattingEnabled = true;
             this.cmbUserRole.Items.AddRange(new object[] {
             "JUDGE",
-            "PERTICIPANT"});
+            "PARTICIPANT"});
             this.cmbUserRole.Location = new System.Drawing.Point(18, 481);
             this.cmbUserRole.Name = "cmbUserRole";
             this.cmbUserRole.Size = new System.Drawing.Size(368, 37);
             this.cmbUserRole.TabIndex = 13;
             // 
-            // btnSubmit
+            // btnCreate
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(18, 579);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(368, 46);
-            this.btnSubmit.TabIndex = 14;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.Location = new System.Drawing.Point(18, 579);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(368, 46);
+            this.btnCreate.TabIndex = 14;
+            this.btnCreate.Text = "Create";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // label6
             // 
@@ -181,6 +182,8 @@ namespace JudgeSystem
             // 
             this.dgvUserData.AllowUserToAddRows = false;
             this.dgvUserData.AllowUserToDeleteRows = false;
+            this.dgvUserData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUserData.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvUserData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUserData.Location = new System.Drawing.Point(466, 57);
             this.dgvUserData.MultiSelect = false;
@@ -208,6 +211,8 @@ namespace JudgeSystem
             // 
             this.dgvSubmissionData.AllowUserToAddRows = false;
             this.dgvSubmissionData.AllowUserToDeleteRows = false;
+            this.dgvSubmissionData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSubmissionData.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSubmissionData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSubmissionData.Location = new System.Drawing.Point(466, 456);
             this.dgvSubmissionData.Name = "dgvSubmissionData";
@@ -252,7 +257,7 @@ namespace JudgeSystem
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dgvUserData);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.cmbUserRole);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -264,8 +269,10 @@ namespace JudgeSystem
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.lblLoginId);
+            this.MaximizeBox = false;
             this.Name = "AdminForm";
             this.Text = "AdminForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminForm_FormClosed);
             this.Load += new System.EventHandler(this.AdminForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubmissionData)).EndInit();
@@ -287,7 +294,7 @@ namespace JudgeSystem
         private System.Windows.Forms.TextBox txtUserPassword;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbUserRole;
-        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvUserData;
         private System.Windows.Forms.Label label7;
