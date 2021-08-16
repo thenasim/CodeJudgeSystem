@@ -45,6 +45,7 @@ namespace JudgeSystem
             TempData.SolvingProblem = selected;
 
             ManageForm.ParticipantForm.Show();
+            this.Hide();
         }
 
         private void dgvProblemLists_CellClick(object sender, DataGridViewCellEventArgs e)

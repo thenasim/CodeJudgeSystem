@@ -63,6 +63,8 @@ namespace JudgeSystem
                 InputOutputData.CreateInputOutput(moreIo);
             }
 
+            TempData.inputOutputs.Clear();
+
             MessageBox.Show("Problem Created Successfully");
             ClearInputFields();
         }

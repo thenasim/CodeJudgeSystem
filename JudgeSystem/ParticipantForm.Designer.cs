@@ -40,6 +40,8 @@ namespace JudgeSystem
             this.label4 = new System.Windows.Forms.Label();
             this.lblCodeRunStatus = new System.Windows.Forms.Label();
             this.rtxtProblemTitle = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // rtxtYourCode
@@ -51,16 +53,17 @@ namespace JudgeSystem
             this.rtxtYourCode.Name = "rtxtYourCode";
             this.rtxtYourCode.Size = new System.Drawing.Size(683, 619);
             this.rtxtYourCode.TabIndex = 0;
-            this.rtxtYourCode.Text = "";
+            this.rtxtYourCode.Text = "public static void Main() {\n    // your code here\n}\n\n// you can create new method" +
+    " here";
             // 
             // rtxtProblemBody
             // 
             this.rtxtProblemBody.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtProblemBody.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtProblemBody.Location = new System.Drawing.Point(12, 111);
+            this.rtxtProblemBody.Location = new System.Drawing.Point(12, 187);
             this.rtxtProblemBody.Name = "rtxtProblemBody";
             this.rtxtProblemBody.ReadOnly = true;
-            this.rtxtProblemBody.Size = new System.Drawing.Size(645, 380);
+            this.rtxtProblemBody.Size = new System.Drawing.Size(645, 304);
             this.rtxtProblemBody.TabIndex = 1;
             this.rtxtProblemBody.Text = "";
             // 
@@ -83,6 +86,7 @@ namespace JudgeSystem
             this.btnRun.TabIndex = 4;
             this.btnRun.Text = "Run";
             this.btnRun.UseVisualStyleBackColor = true;
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
             // btnSubmit
             // 
@@ -109,7 +113,8 @@ namespace JudgeSystem
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 503);
+            this.label3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label3.Location = new System.Drawing.Point(8, 503);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 24);
             this.label3.TabIndex = 7;
@@ -130,7 +135,8 @@ namespace JudgeSystem
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 616);
+            this.label4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label4.Location = new System.Drawing.Point(8, 616);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 24);
             this.label4.TabIndex = 9;
@@ -151,18 +157,42 @@ namespace JudgeSystem
             // 
             this.rtxtProblemTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtProblemTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtProblemTitle.Location = new System.Drawing.Point(12, 9);
+            this.rtxtProblemTitle.Location = new System.Drawing.Point(12, 36);
             this.rtxtProblemTitle.Name = "rtxtProblemTitle";
             this.rtxtProblemTitle.ReadOnly = true;
             this.rtxtProblemTitle.Size = new System.Drawing.Size(645, 96);
             this.rtxtProblemTitle.TabIndex = 11;
             this.rtxtProblemTitle.Text = "";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label1.Location = new System.Drawing.Point(8, 160);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 24);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Body";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label5.Location = new System.Drawing.Point(8, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 24);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Title";
+            // 
             // ParticipantForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1358, 731);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.rtxtProblemTitle);
             this.Controls.Add(this.lblCodeRunStatus);
             this.Controls.Add(this.label4);
@@ -177,6 +207,8 @@ namespace JudgeSystem
             this.MaximizeBox = false;
             this.Name = "ParticipantForm";
             this.Text = "ParticipantForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ParticipantForm_FormClosed);
+            this.Load += new System.EventHandler(this.ParticipantForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +227,7 @@ namespace JudgeSystem
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblCodeRunStatus;
         private System.Windows.Forms.RichTextBox rtxtProblemTitle;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
     }
 }

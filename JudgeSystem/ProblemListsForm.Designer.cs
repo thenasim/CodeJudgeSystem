@@ -61,7 +61,7 @@ namespace JudgeSystem
             this.dgvProblemLists.RowTemplate.Height = 24;
             this.dgvProblemLists.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProblemLists.Size = new System.Drawing.Size(1209, 428);
-            this.dgvProblemLists.TabIndex = 4;
+            this.dgvProblemLists.TabIndex = 2;
             this.dgvProblemLists.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProblemLists_CellClick);
             // 
             // btnSolve
@@ -71,7 +71,7 @@ namespace JudgeSystem
             this.btnSolve.Location = new System.Drawing.Point(438, 569);
             this.btnSolve.Name = "btnSolve";
             this.btnSolve.Size = new System.Drawing.Size(368, 46);
-            this.btnSolve.TabIndex = 15;
+            this.btnSolve.TabIndex = 3;
             this.btnSolve.Text = "Solve";
             this.btnSolve.UseVisualStyleBackColor = true;
             this.btnSolve.Click += new System.EventHandler(this.btnSolve_Click);
@@ -82,7 +82,7 @@ namespace JudgeSystem
             this.txtSearchProblem.Location = new System.Drawing.Point(298, 22);
             this.txtSearchProblem.Name = "txtSearchProblem";
             this.txtSearchProblem.Size = new System.Drawing.Size(929, 34);
-            this.txtSearchProblem.TabIndex = 16;
+            this.txtSearchProblem.TabIndex = 1;
             this.txtSearchProblem.TextChanged += new System.EventHandler(this.txtSearchProblem_TextChanged);
             // 
             // ProblemListsForm
