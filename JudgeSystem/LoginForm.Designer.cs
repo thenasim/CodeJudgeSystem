@@ -80,7 +80,7 @@ namespace JudgeSystem
             this.lblLoginHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoginHeader.Location = new System.Drawing.Point(101, 114);
             this.lblLoginHeader.Name = "lblLoginHeader";
-            this.lblLoginHeader.Size = new System.Drawing.Size(190, 39);
+            this.lblLoginHeader.Size = new System.Drawing.Size(181, 38);
             this.lblLoginHeader.TabIndex = 4;
             this.lblLoginHeader.Text = "Login Page";
             // 
@@ -93,6 +93,7 @@ namespace JudgeSystem
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // LoginForm
             // 
