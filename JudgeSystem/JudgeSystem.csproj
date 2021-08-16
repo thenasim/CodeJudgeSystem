@@ -93,6 +93,12 @@
     <Compile Include="ParticipantForm.Designer.cs">
       <DependentUpon>ParticipantForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProblemListsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProblemListsForm.Designer.cs">
+      <DependentUpon>ProblemListsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddMoreIOForm.resx">
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ParticipantForm.resx">
       <DependentUpon>ParticipantForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProblemListsForm.resx">
+      <DependentUpon>ProblemListsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
