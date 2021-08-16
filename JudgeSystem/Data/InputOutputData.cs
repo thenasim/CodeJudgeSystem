@@ -49,6 +49,15 @@ namespace JudgeSystem.Data
             return null;
         }
 
+        public static bool CreateInputOutput(InputOutput io)
+        {
+            string query = $@"INSERT INTO InputOutput ([input], [output], problem_id)
+                VALUES ('{io.Input}', '{io.Output}', {io.ProblemId});";
+            var row = DataAccess.UpdateDelete(query);
+
+            return row == 1;
+        }
+
         public static bool UpdateInputOutput(InputOutput io)
         {
             string query = $@"UPDATE InputOutput SET [input] = '{io.Input}', [output] = '{io.Output}',

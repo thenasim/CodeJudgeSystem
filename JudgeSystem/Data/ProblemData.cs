@@ -1,6 +1,7 @@
 ﻿using JudgeSystem.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace JudgeSystem.Data
@@ -10,6 +11,26 @@ namespace JudgeSystem.Data
         public static Problem GetProblem(int id)
         {
             string query = $@"SELECT * FROM Problems WHERE id = {id};";
+            SqlDataReader reader = DataAccess.GetData(query);
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    Problem p = ConvertDataToProblem(reader);
+
+                    reader.Close();
+                    return p;
+                }
+            }
+
+            reader.Close();
+            return null;
+        }
+
+        public static Problem GetProblemLastId()
+        {
+            string query = $@"SELECT TOP 1 * FROM Problems ORDER BY id DESC;";
             SqlDataReader reader = DataAccess.GetData(query);
 
             if (reader.HasRows)
@@ -47,6 +68,22 @@ namespace JudgeSystem.Data
 
             reader.Close();
             return null;
+        }
+
+        public static (bool created, int lastId) CreateProblem(Problem p)
+        {
+            string query = $@"INSERT INTO Problems (title, body, testinput, testoutput)
+                VALUES (@title, @body, @testinput, @testoutput)";
+            SqlCommand cmd = new SqlCommand(query, DataAccess.SqlCon);
+
+            cmd.Parameters.AddWithValue("@title", p.Title);
+            cmd.Parameters.AddWithValue("@body", p.Body);
+            cmd.Parameters.AddWithValue("@testinput", p.TestInput);
+            cmd.Parameters.AddWithValue("@testoutput", p.TestOutput);
+
+            var row = cmd.ExecuteNonQuery();
+
+            return (row == 1, GetProblemLastId().Id);
         }
 
         public static bool UpdateProblem(Problem p)

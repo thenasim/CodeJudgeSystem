@@ -112,9 +112,9 @@ namespace JudgeSystem
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(691, 68);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 24);
+            this.label3.Size = new System.Drawing.Size(175, 24);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Test Input";
+            this.label3.Text = "Test Input (optional)";
             // 
             // label4
             // 
@@ -135,6 +135,7 @@ namespace JudgeSystem
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // rtxtTestOutput
             // 
@@ -162,9 +163,9 @@ namespace JudgeSystem
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(691, 372);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 24);
+            this.label5.Size = new System.Drawing.Size(134, 24);
             this.label5.TabIndex = 19;
-            this.label5.Text = "Input";
+            this.label5.Text = "Input (optional)";
             // 
             // rtxtOutput
             // 
@@ -218,6 +219,7 @@ namespace JudgeSystem
             this.Controls.Add(this.lblLoginId);
             this.Name = "JudgeForm";
             this.Text = "JudgeForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.JudgeForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
