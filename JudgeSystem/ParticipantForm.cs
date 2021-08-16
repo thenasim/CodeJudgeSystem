@@ -106,7 +106,8 @@ namespace JudgeSystem
 
         private void ParticipantForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            ManageForm.ProblemListsForm.Show();
         }
     }
 }

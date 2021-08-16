@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace JudgeSystem
@@ -19,11 +20,18 @@ namespace JudgeSystem
 
             foreach (InputOutput io in inputOutputs)
             {
-                string codeOutput = RunExecutable(exePath, io.Input.TrimEnd());
-                result = (codeOutput.TrimEnd() == io.Output.TrimEnd());
+                string codeOutput = RunExecutable(exePath, io.Input.Trim());
+                string trimmedCodeOutput = codeOutput.Trim();
+                string trimmedIoOut = io.Output.Trim();
+
+                trimmedCodeOutput = Regex.Replace(trimmedCodeOutput, @"\n|\r\n", Environment.NewLine);
+                trimmedIoOut = Regex.Replace(trimmedIoOut, @"\n|\r\n", Environment.NewLine);
+
+                result = (trimmedCodeOutput == trimmedIoOut);
+
                 if (result == false)
                 {
-                    return (result, codeOutput.TrimEnd());
+                    return (result, trimmedCodeOutput);
                 }
             }
 

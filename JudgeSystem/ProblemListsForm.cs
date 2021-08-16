@@ -24,11 +24,6 @@ namespace JudgeSystem
             dgvProblemLists.ClearSelection();
         }
 
-        private void txtSearchProblem_TextChanged(object sender, EventArgs e)
-        {
-            // TODO: Search Problem
-        }
-
         private void ProblemListsForm_Load(object sender, EventArgs e)
         {
             PopulateGridView();
