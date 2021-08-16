@@ -59,11 +59,12 @@
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CodeRunResultForm.cs">
+    <Compile Include="CodeJudge.cs" />
+    <Compile Include="CodeError.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CodeRunResultForm.Designer.cs">
-      <DependentUpon>CodeRunResultForm.cs</DependentUpon>
+    <Compile Include="CodeError.Designer.cs">
+      <DependentUpon>CodeError.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageUser.cs" />
     <Compile Include="DataAccess.cs" />
@@ -110,8 +111,8 @@
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CodeRunResultForm.resx">
-      <DependentUpon>CodeRunResultForm.cs</DependentUpon>
+    <EmbeddedResource Include="CodeError.resx">
+      <DependentUpon>CodeError.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JudgeForm.resx">
       <DependentUpon>JudgeForm.cs</DependentUpon>

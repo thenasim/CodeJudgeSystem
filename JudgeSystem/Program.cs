@@ -15,8 +15,8 @@ namespace JudgeSystem
             //Application.Run(new JudgeForm());
             //Application.Run(new ParticipantForm());
             //Application.Run(new AddMoreIOForm());
-            //Application.Run(new LoginForm());
-            Application.Run(new ProblemListsForm());
+            Application.Run(new LoginForm());
+            //Application.Run(new ProblemListsForm());
         }
     }
 }

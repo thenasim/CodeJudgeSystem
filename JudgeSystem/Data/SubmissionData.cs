@@ -93,6 +93,23 @@ namespace JudgeSystem.Data
             return null;
         }
 
+        public static bool CreateSubmission(Submission sb)
+        {
+            string query = $@"INSERT INTO Submissions (code, [result], [time], user_id, problem_id)
+                VALUES (@code, @result, @time, @user_id, @problem_id);";
+            SqlCommand cmd = new SqlCommand(query, DataAccess.SqlCon);
+
+            cmd.Parameters.AddWithValue("@code", sb.Code);
+            cmd.Parameters.AddWithValue("@result", sb.Result);
+            cmd.Parameters.AddWithValue("@time", sb.Time);
+            cmd.Parameters.AddWithValue("@user_id", sb.UserId);
+            cmd.Parameters.AddWithValue("@problem_id", sb.ProblemId);
+
+            var row = cmd.ExecuteNonQuery();
+
+            return row == 1;
+        }
+
         public static bool UpdateSubmission(Submission sb)
         {
             string query = $@"UPDATE Submissions SET code = '{sb.Code}', [result] = {sb.Result},
