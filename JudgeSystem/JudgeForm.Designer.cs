@@ -221,6 +221,7 @@ namespace JudgeSystem
             this.Name = "JudgeForm";
             this.Text = "JudgeForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.JudgeForm_FormClosed);
+            this.Load += new System.EventHandler(this.JudgeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

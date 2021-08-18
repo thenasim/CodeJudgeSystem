@@ -24,28 +24,55 @@ namespace JudgeSystem
             dgvProblemLists.ClearSelection();
         }
 
+        private void LoadJudgeForm()
+        {
+            ManageForm.JudgeForm = new JudgeForm();
+            ManageForm.JudgeForm.Show();
+            this.Hide();
+        }
+
         private void ProblemListsForm_Load(object sender, EventArgs e)
         {
             PopulateGridView();
+
+            if (ManageUser.IsJudge(ManageUser.CurrentUser))
+            {
+                btnAction.Text = "Update";
+                btnAddNew.Visible = true;
+            }
         }
 
-        private void btnSolve_Click(object sender, EventArgs e)
+        private void btnAction_Click(object sender, EventArgs e)
         {
+            Problem selected = (Problem)dgvProblemLists.CurrentRow.DataBoundItem;
+
+            if (ManageUser.IsJudge(ManageUser.CurrentUser))
+            {
+                TempData.EditingProblem = selected;
+
+                LoadJudgeForm();
+                return;
+            }
+
             if (ManageForm.ParticipantForm == null)
             {
                 ManageForm.ParticipantForm = new ParticipantForm();
             }
 
-            Problem selected = (Problem)dgvProblemLists.CurrentRow.DataBoundItem;
             TempData.SolvingProblem = selected;
 
             ManageForm.ParticipantForm.Show();
             this.Hide();
         }
 
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            LoadJudgeForm();
+        }
+
         private void dgvProblemLists_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnSolve.Enabled = true;
+            btnAction.Enabled = true;
         }
 
         private void ProblemListsForm_FormClosed(object sender, FormClosedEventArgs e)

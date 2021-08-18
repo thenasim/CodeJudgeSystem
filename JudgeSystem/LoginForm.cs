@@ -30,13 +30,7 @@ namespace JudgeSystem
                     ManageForm.AdminForm.Show();
                     this.Hide();
                 }
-                else if (ManageUser.IsJudge(user))
-                {
-                    ManageForm.JudgeForm = new JudgeForm();
-                    ManageForm.JudgeForm.Show();
-                    this.Hide();
-                }
-                else if (ManageUser.IsParticpant(user))
+                else if (ManageUser.IsJudge(user) || ManageUser.IsParticpant(user))
                 {
                     ManageForm.ProblemListsForm = new ProblemListsForm();
                     ManageForm.ProblemListsForm.Show();

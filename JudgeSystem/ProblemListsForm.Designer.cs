@@ -31,7 +31,8 @@ namespace JudgeSystem
         {
             this.lblLoginId = new System.Windows.Forms.Label();
             this.dgvProblemLists = new System.Windows.Forms.DataGridView();
-            this.btnSolve = new System.Windows.Forms.Button();
+            this.btnAction = new System.Windows.Forms.Button();
+            this.btnAddNew = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProblemLists)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,29 +60,42 @@ namespace JudgeSystem
             this.dgvProblemLists.RowHeadersWidth = 51;
             this.dgvProblemLists.RowTemplate.Height = 24;
             this.dgvProblemLists.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProblemLists.Size = new System.Drawing.Size(1209, 428);
+            this.dgvProblemLists.Size = new System.Drawing.Size(1209, 416);
             this.dgvProblemLists.TabIndex = 0;
             this.dgvProblemLists.TabStop = false;
             this.dgvProblemLists.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProblemLists_CellClick);
             // 
-            // btnSolve
+            // btnAction
             // 
-            this.btnSolve.Enabled = false;
-            this.btnSolve.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSolve.Location = new System.Drawing.Point(438, 569);
-            this.btnSolve.Name = "btnSolve";
-            this.btnSolve.Size = new System.Drawing.Size(368, 46);
-            this.btnSolve.TabIndex = 3;
-            this.btnSolve.Text = "Solve";
-            this.btnSolve.UseVisualStyleBackColor = true;
-            this.btnSolve.Click += new System.EventHandler(this.btnSolve_Click);
+            this.btnAction.Enabled = false;
+            this.btnAction.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAction.Location = new System.Drawing.Point(438, 541);
+            this.btnAction.Name = "btnAction";
+            this.btnAction.Size = new System.Drawing.Size(368, 46);
+            this.btnAction.TabIndex = 3;
+            this.btnAction.Text = "Solve";
+            this.btnAction.UseVisualStyleBackColor = true;
+            this.btnAction.Click += new System.EventHandler(this.btnAction_Click);
+            // 
+            // btnAddNew
+            // 
+            this.btnAddNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNew.Location = new System.Drawing.Point(438, 605);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(368, 46);
+            this.btnAddNew.TabIndex = 4;
+            this.btnAddNew.Text = "Add New";
+            this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Visible = false;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // ProblemListsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1239, 676);
-            this.Controls.Add(this.btnSolve);
+            this.Controls.Add(this.btnAddNew);
+            this.Controls.Add(this.btnAction);
             this.Controls.Add(this.dgvProblemLists);
             this.Controls.Add(this.lblLoginId);
             this.Name = "ProblemListsForm";
@@ -98,6 +112,7 @@ namespace JudgeSystem
 
         private System.Windows.Forms.Label lblLoginId;
         private System.Windows.Forms.DataGridView dgvProblemLists;
-        private System.Windows.Forms.Button btnSolve;
+        private System.Windows.Forms.Button btnAction;
+        private System.Windows.Forms.Button btnAddNew;
     }
 }

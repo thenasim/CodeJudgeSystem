@@ -7,6 +7,8 @@ namespace JudgeSystem
 {
     public partial class JudgeForm : Form
     {
+        private bool isUpdating = TempData.EditingProblem != null;
+
         public JudgeForm()
         {
             InitializeComponent();
@@ -46,6 +48,18 @@ namespace JudgeSystem
                 TestOutput = rtxtTestOutput.Text,
             };
 
+            if (isUpdating)
+            {
+                p.Id = TempData.EditingProblem.Id;
+                ProblemData.UpdateProblem(p);
+
+                ManageForm.ProblemListsForm = new ProblemListsForm();
+                ManageForm.ProblemListsForm.Show();
+                this.Hide();
+
+                return;
+            }
+
             (_, int createdId) = ProblemData.CreateProblem(p);
 
             InputOutput io = new InputOutput
@@ -79,9 +93,24 @@ namespace JudgeSystem
             ManageForm.AddMoreIOForm.Show();
         }
 
+        private void JudgeForm_Load(object sender, EventArgs e)
+        {
+            if (isUpdating)
+            {
+                rtxtProblemTitle.Text = TempData.EditingProblem.Title;
+                rtxtProblemBody.Text = TempData.EditingProblem.Body;
+                rtxtTestInput.Text = TempData.EditingProblem.TestInput;
+                rtxtTestOutput.Text = TempData.EditingProblem.TestOutput;
+
+                btnSave.Text = "Update";
+                btnAddMoreIO.Visible = false;
+            }
+        }
+
         private void JudgeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            ManageForm.ProblemListsForm.Show();
+            this.Hide();
         }
     }
 }
