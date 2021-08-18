@@ -20,5 +20,10 @@ namespace JudgeSystem
         {
             return u.Role == "PARTICIPANT";
         }
+
+        public static bool IsSupervisor(User u)
+        {
+            return u.Role == "SUPERVISOR";
+        }
     }
 }

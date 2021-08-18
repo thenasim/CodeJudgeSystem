@@ -36,6 +36,12 @@ namespace JudgeSystem
                     ManageForm.ProblemListsForm.Show();
                     this.Hide();
                 }
+                else if (ManageUser.IsSupervisor(user))
+                {
+                    ManageForm.SupervisorForm = new SupervisorForm();
+                    ManageForm.SupervisorForm.Show();
+                    this.Hide();
+                }
             }
         }
     }

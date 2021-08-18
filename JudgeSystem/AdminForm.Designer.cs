@@ -151,7 +151,8 @@ namespace JudgeSystem
             this.cmbUserRole.FormattingEnabled = true;
             this.cmbUserRole.Items.AddRange(new object[] {
             "JUDGE",
-            "PARTICIPANT"});
+            "PARTICIPANT",
+            "SUPERVISOR"});
             this.cmbUserRole.Location = new System.Drawing.Point(18, 481);
             this.cmbUserRole.Name = "cmbUserRole";
             this.cmbUserRole.Size = new System.Drawing.Size(368, 37);

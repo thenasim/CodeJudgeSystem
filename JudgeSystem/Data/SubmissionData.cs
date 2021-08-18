@@ -120,6 +120,15 @@ namespace JudgeSystem.Data
             return row == 1;
         }
 
+        public static bool ApproveSubmission(int submissionId)
+        {
+            string query = $@"UPDATE Submissions SET [result] = 2
+                WHERE id = {submissionId};";
+            var row = DataAccess.UpdateDelete(query);
+
+            return row == 1;
+        }
+
         public static bool DeleteSubmission(int id)
         {
             string query = $@"DELETE FROM Submissions WHERE id = {id};";

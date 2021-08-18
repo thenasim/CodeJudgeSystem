@@ -9,5 +9,7 @@
         public static LoginForm LoginForm { get; set; }
         public static ParticipantForm ParticipantForm { get; set; }
         public static ProblemListsForm ProblemListsForm { get; set; }
+        public static SupervisorForm SupervisorForm { get; set; }
+        public static VerifySubmission VerifySubmission { get; set; }
     }
 }
