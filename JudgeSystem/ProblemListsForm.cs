@@ -38,7 +38,8 @@ namespace JudgeSystem
             if (ManageUser.IsJudge(ManageUser.CurrentUser))
             {
                 btnAction.Text = "Update";
-                btnAddNew.Visible = true;
+                btnAddNew.Enabled = true;
+                btnApprovedCode.Enabled = false;
             }
         }
 
@@ -73,6 +74,13 @@ namespace JudgeSystem
         private void dgvProblemLists_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnAction.Enabled = true;
+        }
+
+        private void btnApprovedCode_Click(object sender, EventArgs e)
+        {
+            ManageForm.ApprovedSubmission = new ApprovedSubmission();
+            ManageForm.ApprovedSubmission.Show();
+            this.Hide();
         }
 
         private void ProblemListsForm_FormClosed(object sender, FormClosedEventArgs e)

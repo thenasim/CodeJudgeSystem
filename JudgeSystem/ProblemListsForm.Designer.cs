@@ -33,6 +33,7 @@ namespace JudgeSystem
             this.dgvProblemLists = new System.Windows.Forms.DataGridView();
             this.btnAction = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
+            this.btnApprovedCode = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProblemLists)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +70,7 @@ namespace JudgeSystem
             // 
             this.btnAction.Enabled = false;
             this.btnAction.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAction.Location = new System.Drawing.Point(438, 541);
+            this.btnAction.Location = new System.Drawing.Point(438, 519);
             this.btnAction.Name = "btnAction";
             this.btnAction.Size = new System.Drawing.Size(368, 46);
             this.btnAction.TabIndex = 3;
@@ -79,21 +80,33 @@ namespace JudgeSystem
             // 
             // btnAddNew
             // 
+            this.btnAddNew.Enabled = false;
             this.btnAddNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNew.Location = new System.Drawing.Point(438, 605);
+            this.btnAddNew.Location = new System.Drawing.Point(438, 571);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(368, 46);
             this.btnAddNew.TabIndex = 4;
             this.btnAddNew.Text = "Add New";
             this.btnAddNew.UseVisualStyleBackColor = true;
-            this.btnAddNew.Visible = false;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
+            // 
+            // btnApprovedCode
+            // 
+            this.btnApprovedCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApprovedCode.Location = new System.Drawing.Point(438, 623);
+            this.btnApprovedCode.Name = "btnApprovedCode";
+            this.btnApprovedCode.Size = new System.Drawing.Size(368, 46);
+            this.btnApprovedCode.TabIndex = 5;
+            this.btnApprovedCode.Text = "My Approved Code";
+            this.btnApprovedCode.UseVisualStyleBackColor = true;
+            this.btnApprovedCode.Click += new System.EventHandler(this.btnApprovedCode_Click);
             // 
             // ProblemListsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1239, 676);
+            this.Controls.Add(this.btnApprovedCode);
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.btnAction);
             this.Controls.Add(this.dgvProblemLists);
@@ -114,5 +127,6 @@ namespace JudgeSystem
         private System.Windows.Forms.DataGridView dgvProblemLists;
         private System.Windows.Forms.Button btnAction;
         private System.Windows.Forms.Button btnAddNew;
+        private System.Windows.Forms.Button btnApprovedCode;
     }
 }

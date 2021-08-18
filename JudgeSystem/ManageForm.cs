@@ -11,5 +11,6 @@
         public static ProblemListsForm ProblemListsForm { get; set; }
         public static SupervisorForm SupervisorForm { get; set; }
         public static VerifySubmission VerifySubmission { get; set; }
+        public static ApprovedSubmission ApprovedSubmission { get; set; }
     }
 }
