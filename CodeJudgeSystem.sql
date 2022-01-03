@@ -29,7 +29,7 @@ CREATE TABLE [Submissions] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
   [problem_id] int NOT NULL,
   [user_id] int NOT NULL,
-  [code] nvarchar(255) NOT NULL,
+  [code] nvarchar(MAX) NOT NULL,
   [result] int NOT NULL,
   [time] datetime NOT NULL
 )
